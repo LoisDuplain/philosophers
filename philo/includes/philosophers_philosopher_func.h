@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers_philosopher_func.h                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:24:39 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/29 17:42:50 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/10/31 14:39:21 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	destroy_philosopher(t_philosopher *philo);
 
 /*
 **	Display philosopher action.
-**	./philosopher/display_action.c
+**	./philosopher/action/display_action.c
 */
 void	display_action(t_simulation *sim, t_philosopher *philosopher,
 			t_philo_action action);

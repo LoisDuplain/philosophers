@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_simulation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 16:19:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/29 17:45:56 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/10/31 14:31:14 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int	init_simulation(t_simulation *sim)
 	if (sim->threads == NULL)
 		return (0);
 	pthread_mutex_init(&sim->writing, NULL);
+	pthread_mutex_init(&sim->meal_checker, NULL);
 	return (1);
 }

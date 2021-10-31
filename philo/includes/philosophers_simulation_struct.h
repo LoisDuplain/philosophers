@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers_simulation_struct.h                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:24:39 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/29 17:41:04 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/10/31 14:30:42 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,17 @@
 
 typedef struct s_simulation
 {
-	int				n_philosophers;
-	int				time_to_die;
-	int				time_to_eat;
-	int				time_to_sleep;
-	int				n_times_each_philosopher_must_eat;
-	t_philosopher	*philos;
-	pthread_t		*threads;
-	pthread_mutex_t	writing;
+	int					n_philosophers;
+	int					time_to_die;
+	int					time_to_eat;
+	int					time_to_sleep;
+	int					n_times_each_philosopher_must_eat;
+	t_philosopher		*philos;
+	pthread_t			*threads;
+	pthread_mutex_t		writing;
+	pthread_mutex_t		meal_checker;
+	unsigned long long	start_timestamp;
+	int					running;
 }	t_simulation;
 
 /*

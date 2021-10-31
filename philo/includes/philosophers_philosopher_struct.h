@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers_philosopher_struct.h                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:24:39 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/29 17:33:34 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/10/31 15:30:41 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@
 
 typedef struct s_philosopher
 {
-	int				id;
-	pthread_mutex_t	*prev_fork;
-	pthread_mutex_t	fork;
-	int				is_alive;
-	int				is_sleeping;
-	int				is_eating;
-	int				is_thinking;
+	int					id;
+	pthread_mutex_t		*prev_fork;
+	pthread_mutex_t		fork;
+	int					is_alive;
+	int					is_sleeping;
+	int					is_eating;
+	int					is_thinking;
+	int					nb_meal;
+	unsigned long long	last_meal_timestamp;
 }	t_philosopher;
 
 typedef enum e_philo_action

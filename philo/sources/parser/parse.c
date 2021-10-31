@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 15:33:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/29 16:59:49 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/10/31 14:32:20 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	parse(t_simulation *sim, int argc, char **argv)
 		return (0);
 	}
 	if (argc != 5)
-		sim->n_times_each_philosopher_must_eat = -1;
+		sim->n_times_each_philosopher_must_eat = 0;
 	else
 	{
 		if (!parse_value(argv[4], &sim->n_times_each_philosopher_must_eat))

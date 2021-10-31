@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers_simulation_func.h                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:13:19 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/29 17:45:49 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/10/31 14:17:55 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,11 @@ int		init_simulation(t_simulation *sim);
 **	./init/destroy_simulation.c
 */
 void	destroy_simulation(t_simulation *sim);
+
+/*
+**	Start simulation.
+**	./init/start_simulation.c
+*/
+int		start_simulation(t_simulation *sim);
 
 #endif
