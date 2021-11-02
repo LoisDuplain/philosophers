@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_simulation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 16:19:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/31 14:31:14 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 09:57:51 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	init_simulation(t_simulation *sim)
 	index = 0;
 	while (index < sim->n_philosophers)
 	{
-		init_philosopher(index + 1, &sim->philos[index]);
+		init_philosopher(sim, index + 1, &sim->philos[index]);
 		if (index > 0)
 			sim->philos[index].prev_fork = &sim->philos[index - 1].fork;
 		index++;

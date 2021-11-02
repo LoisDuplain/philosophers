@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:24:09 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/29 17:42:54 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 09:37:45 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 void	display_action(t_simulation *sim, t_philosopher *philosopher,
 			t_philo_action action)
 {
+	unsigned long long	time;
+
 	pthread_mutex_lock(&sim->writing);
-	ft_putull(get_timestamp());
-	ft_putchar(' ');
+	time = get_timestamp();
+	ft_putull(time);
+	ft_putstr(" (");
+	ft_putull(time - sim->start_timestamp);
+	ft_putstr(") ");
 	ft_putull(philosopher->id);
 	if (action == DIED)
 		ft_putstr_nl(" died");

@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   die.c                                              :+:      :+:    :+:   */
+/*   philo_think.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 15:20:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/31 15:29:52 by lduplain         ###   ########.fr       */
+/*   Created: 2021/10/31 14:41:35 by lduplain          #+#    #+#             */
+/*   Updated: 2021/11/02 10:06:11 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	die(t_simulation *sim, t_philosopher *philo)
+void	philo_think(t_simulation *sim, t_philosopher *philo)
 {
-	if (!sim->running)
-		return ;
-	display_action(sim, philo, DIED);
-	philo->is_alive = 0;
-	sim->running = 0;
+	display_action(sim, philo, THINKING);
+	philo->is_eating = 0;
+	philo->is_sleeping = 0;
+	philo->is_thinking = 1;
 }

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   destroy_simulation.c                               :+:      :+:    :+:   */
+/*   philos_ate_maximum.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 16:44:54 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 10:07:28 by lduplain         ###   ########.fr       */
+/*   Created: 2021/11/02 09:32:32 by lduplain          #+#    #+#             */
+/*   Updated: 2021/11/02 09:41:08 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	destroy_simulation(t_simulation *sim)
+int	philos_ate_maximum(t_simulation *sim)
 {
-	int	index;
+	int				index;
 
+	if (!sim->n_times_each_philosopher_must_eat)
+		return (0);
 	index = 0;
 	while (index < sim->n_philosophers)
 	{
-		destroy_philosopher(&sim->philos[index]);
-		index++;
+		if (sim->philos[index].nb_meal < sim->n_times_each_philosopher_must_eat)
+			return (0);
 	}
-	free(sim->philos);
-	free(sim->threads);
-	pthread_mutex_destroy(&sim->writing);
-	pthread_mutex_destroy(&sim->meal_checker);
+	return (1);
 }

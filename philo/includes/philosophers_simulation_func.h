@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers_simulation_func.h                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:13:19 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/31 14:17:55 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 09:42:01 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,11 @@ void	destroy_simulation(t_simulation *sim);
 **	./init/start_simulation.c
 */
 int		start_simulation(t_simulation *sim);
+
+/*
+**	Check if all philosophers ate number_of_times_each_philosopher_must_eat.
+**	./init/philos_ate_maximum.c
+*/
+int		philos_ate_maximum(t_simulation *sim);
 
 #endif
