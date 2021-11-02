@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 14:37:55 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 10:58:48 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 15:35:27 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	philo_eat(t_simulation *sim, t_philosopher *philo)
 	take_forks(sim, philo);
 	if (philo->is_alive)
 	{
-		pthread_mutex_lock(&sim->meal_checker);
 		display_action(sim, philo, EATING);
 		philo->last_meal_t = get_timestamp();
 		philo->is_eating = 1;
@@ -51,7 +50,6 @@ void	philo_eat(t_simulation *sim, t_philosopher *philo)
 				break ;
 			usleep(10);
 		}
-		pthread_mutex_unlock(&sim->meal_checker);
 	}
 	release_forks(philo);
 }
