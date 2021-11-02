@@ -6,13 +6,13 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:49:15 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 11:00:32 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 17:25:03 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int	check_meal(t_simulation *sim)
+void	check_meal(t_simulation *sim)
 {
 	int	index;
 	int	diff_time;
@@ -20,7 +20,7 @@ int	check_meal(t_simulation *sim)
 	while (sim->running)
 	{
 		if (philos_ate_maximum(sim))
-			break ;
+			return ;
 		index = 0;
 		while (index < sim->n_philosophers)
 		{
@@ -29,13 +29,12 @@ int	check_meal(t_simulation *sim)
 			if (diff_time >= sim->time_to_die)
 			{
 				philo_die(sim, &sim->philos[index]);
-				return (0);
+				return ;
 			}
 			pthread_mutex_unlock(&sim->meal_checker);
 			index++;
 		}
 	}
-	return (1);
 }
 
 void	*simulate_philo(void *data)
@@ -45,29 +44,29 @@ void	*simulate_philo(void *data)
 
 	philo = data;
 	sim = philo->sim;
-	if (philo->id % 2 == 1)
-		usleep(15000);
+	if (philo->id % 2 == 0)
+		usleep(1000);
 	while (sim->running && philo->is_alive)
 	{
-		if (sim->running && philo->is_alive && !philo->is_eating)
+		if (sim->running && philo->is_alive)
 			philo_eat(sim, philo);
-		if (sim->running && philo->is_alive && !philo->is_sleeping)
+		if (sim->running && philo->is_alive)
 			philo_sleep(sim, philo);
 		if (philo->is_alive && sim->n_times_each_philosopher_must_eat
 			&& philo->nb_meal == sim->n_times_each_philosopher_must_eat)
-			break ;
-		if (sim->running && philo->is_alive && !philo->is_thinking)
+			return (NULL);
+		if (sim->running && philo->is_alive)
 			philo_think(sim, philo);
 	}
-	return (data);
+	return (NULL);
 }
 
-int	start_simulation(t_simulation *sim)
+void	start_simulation(t_simulation *sim)
 {
 	int	index;
 
-	sim->start_timestamp = get_timestamp();
 	sim->running = 1;
+	sim->start_timestamp = get_timestamp();
 	index = 0;
 	while (index < sim->n_philosophers)
 	{
@@ -76,7 +75,11 @@ int	start_simulation(t_simulation *sim)
 			sim->running = 0;
 		index++;
 	}
-	if (!check_meal(sim))
-		return (0);
-	return (1);
+	check_meal(sim);
+	index = 0;
+	while (index < sim->n_philosophers)
+	{
+		pthread_detach(sim->threads[index]);
+		index++;
+	}
 }

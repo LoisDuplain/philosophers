@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:24:39 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 10:06:27 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:33:48 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@
 **	./philosopher/init_philosopher.c
 */
 void	init_philosopher(t_simulation *sim, int id, t_philosopher *philo);
-
-/*
-**	Destroy a philosopher.
-**	./philosopher/destroy_philosopher.c
-*/
-void	destroy_philosopher(t_philosopher *philo);
 
 /*
 **	Display philosopher action.

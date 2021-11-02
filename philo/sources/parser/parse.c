@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 15:33:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/31 14:32:20 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:36:35 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	parse(t_simulation *sim, int argc, char **argv)
 		|| !parse_value(argv[2], &sim->time_to_eat)
 		|| !parse_value(argv[3], &sim->time_to_sleep))
 		return (0);
-	if (sim->n_philosophers <= 1)
+	if (sim->n_philosophers < 1)
 	{
-		ft_putstr_nl("Number of philosophers should be greater than 1.");
+		printf("Number of philosophers should be greater than 1.\n");
 		return (0);
 	}
 	if (argc != 5)
@@ -32,7 +32,7 @@ int	parse(t_simulation *sim, int argc, char **argv)
 			return (0);
 		if (sim->n_times_each_philosopher_must_eat <= 0)
 		{
-			ft_putstr_nl("n_times_each_philosopher_must_eat must be > 0.");
+			printf("n_times_each_philosopher_must_eat must be > 0.\n");
 			return (0);
 		}
 	}

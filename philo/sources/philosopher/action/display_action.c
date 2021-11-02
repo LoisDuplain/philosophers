@@ -6,33 +6,29 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:24:09 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 09:37:45 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 17:28:33 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	display_action(t_simulation *sim, t_philosopher *philosopher,
+void	display_action(t_simulation *sim, t_philosopher *philo,
 			t_philo_action action)
 {
 	unsigned long long	time;
 
 	pthread_mutex_lock(&sim->writing);
 	time = get_timestamp();
-	ft_putull(time);
-	ft_putstr(" (");
-	ft_putull(time - sim->start_timestamp);
-	ft_putstr(") ");
-	ft_putull(philosopher->id);
+	printf("%llu (%llu) %d ", time, time - sim->start_timestamp, philo->id);
 	if (action == DIED)
-		ft_putstr_nl(" died");
+		printf("died\n");
 	else if (action == SLEEPING)
-		ft_putstr_nl(" is sleeping");
+		printf("is sleeping\n");
 	else if (action == THINKING)
-		ft_putstr_nl(" is thinking");
+		printf("is thinking\n");
 	else if (action == EATING)
-		ft_putstr_nl(" is eating");
+		printf("is eating\n");
 	else if (action == TAKEN_FORK)
-		ft_putstr_nl(" has taken fork");
+		printf("has taken fork\n");
 	pthread_mutex_unlock(&sim->writing);
 }

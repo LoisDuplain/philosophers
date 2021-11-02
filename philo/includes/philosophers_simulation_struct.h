@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers_simulation_struct.h                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain < lduplain@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:24:39 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/31 14:30:42 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 17:28:15 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

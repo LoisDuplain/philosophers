@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 16:44:54 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 10:07:28 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:33:37 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	destroy_simulation(t_simulation *sim)
 	index = 0;
 	while (index < sim->n_philosophers)
 	{
-		destroy_philosopher(&sim->philos[index]);
+		pthread_mutex_destroy(&sim->philos[index].fork);
 		index++;
 	}
 	free(sim->philos);

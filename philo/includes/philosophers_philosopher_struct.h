@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:24:39 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 10:07:12 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:35:25 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ typedef struct s_philosopher
 	pthread_mutex_t		*prev_fork;
 	pthread_mutex_t		fork;
 	int					is_alive;
-	int					is_sleeping;
-	int					is_eating;
-	int					is_thinking;
 	int					nb_meal;
 	unsigned long long	last_meal_t;
 }	t_philosopher;

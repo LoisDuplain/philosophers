@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:13:19 by lduplain          #+#    #+#             */
-/*   Updated: 2021/10/29 16:13:40 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:26:11 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 /*
 **	Print char on standard output.
-**	./parser/ft_putchar.c
+**	./parser/parse.c
 */
 int	parse(t_simulation *sim, int argc, char **argv);
 

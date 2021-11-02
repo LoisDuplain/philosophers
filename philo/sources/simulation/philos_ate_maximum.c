@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 09:32:32 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 09:41:08 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/02 17:24:44 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	philos_ate_maximum(t_simulation *sim)
 	{
 		if (sim->philos[index].nb_meal < sim->n_times_each_philosopher_must_eat)
 			return (0);
+		index++;
 	}
 	return (1);
 }
