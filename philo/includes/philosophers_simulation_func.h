@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:13:19 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 16:56:45 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/03 10:45:34 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,17 @@ void	start_simulation(t_simulation *sim);
 **	./init/philos_ate_maximum.c
 */
 int		philos_ate_maximum(t_simulation *sim);
+
+/*
+**	Check for philosophers must be killed.
+**	./init/check_meal.c
+*/
+void	check_meal(t_simulation *sim);
+
+/*
+**	Simulate a philosopher.
+**	./init/simulate_philo.c
+*/
+void	*simulate_philo(void *philosopher);
 
 #endif

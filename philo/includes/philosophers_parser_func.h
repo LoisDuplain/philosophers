@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:13:19 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/02 16:26:11 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/11/03 09:23:11 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,5 @@
 **	./parser/parse.c
 */
 int	parse(t_simulation *sim, int argc, char **argv);
-
-/*
-**	Convert to int and store it in dest.
-**	./parser/parse_value.c
-*/
-int	parse_value(char *source, int *dest);
 
 #endif
