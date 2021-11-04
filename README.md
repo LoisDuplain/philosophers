@@ -18,12 +18,14 @@
   One or more philosophers are sitting at a round table either eating, either thinking, either sleeping. <br>
   While they are eating, they do not think or sleep. <br>
   While thinking they don’t eat or sleep and while sleeping, they do not eat or think. <br>
+  <br>
   The philosophers sit at a circular table with a large bowl of spaghetti in the center. <br>
   There are some forks on the table. <br>
   Serving and eating spaghetti with a single fork is very inconvenient, so the philosophers will eat with two forks, one for each hand. <br>
+  <br>
   Each time a philosopher finishes eating, they will drop their forks and start sleeping. <br>
   Once they have finished sleeping, they will start thinking. <br>
-  The simulation stops when a philosopher dies.
+  The simulation stops when a philosopher dies. <br>
   <br>
   Created by Loïs Duplain. (42login: lduplain, 42mail: lduplain@student.42lyon.fr)
 </p>
