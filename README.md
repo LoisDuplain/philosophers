@@ -79,6 +79,36 @@ Usage:
 ./philo 5 800 200 200
 ```
 
+<p align="left">The philosopher should not eat and die:</p>
+
+```bash
+./philo 1 800 200 200
+```
+
+<p align="left">No one should die and simulation should stop when all philosophers has eaten 7 times:</p>
+
+```bash
+./philo 5 800 200 200 7
+```
+
+<p align="left">To count how many times a philsopher has eaten:</p>
+
+```bash
+./philo 5 800 200 200 7 | grep "? is eating" | wc -l			(replace "?" by a philosopher ID)
+```
+
+<p align="left">To test simulation optimization:</p>
+
+```bash
+./philo 4 410 200 200											(No one should die)
+```
+
+<p align="left">My code is well optimized so this should work:</p>
+
+```bash
+./philo 4 401 200 200											(No one should die)
+```
+
 <h2 align="left">🖥️ 42</h2>
 
 <a href="https://github.com/LoisDuplain/42cursus/blob/master/philosophers/philosophers.pdf">Subject</a>
