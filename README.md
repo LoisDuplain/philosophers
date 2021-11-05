@@ -100,13 +100,13 @@ Usage:
 <p align="left">To test simulation optimization:</p>
 
 ```bash
-./philo 4 410 200 200			(No one should die)
+./philo 4 410 200 200									(No one should die)
 ```
 
 <p align="left">My code is well optimized so this should work:</p>
 
 ```bash
-./philo 4 401 200 200			(No one should die)
+./philo 4 401 200 200									(No one should die)
 ```
 
 <h2 align="left">🖥️ 42</h2>
