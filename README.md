@@ -84,7 +84,7 @@ Usage:
 <a href="https://github.com/LoisDuplain/42cursus/blob/master/philosophers/philosophers.pdf">Subject</a>
 <p align="left">
   Mark:
-  <img alt="42-project-mark" src="https://badge42.herokuapp.com/api/project/lduplain/philosophers"/>
+  <img alt="42-project-mark" src="https://badge42.herokuapp.com/api/project/lduplain/Philosophers"/>
 </p>
 
 <h2 align="left">⚖️ Copyright</h2>
