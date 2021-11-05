@@ -94,19 +94,19 @@ Usage:
 <p align="left">To count how many times a philsopher has eaten:</p>
 
 ```bash
-./philo 5 800 200 200 7 | grep "? is eating" | wc -l			(replace "?" by a philosopher ID)
+./philo 5 800 200 200 7 | grep "? is eating" | wc -l	(replace "?" by a philosopher ID)
 ```
 
 <p align="left">To test simulation optimization:</p>
 
 ```bash
-./philo 4 410 200 200											(No one should die)
+./philo 4 410 200 200			(No one should die)
 ```
 
 <p align="left">My code is well optimized so this should work:</p>
 
 ```bash
-./philo 4 401 200 200											(No one should die)
+./philo 4 401 200 200			(No one should die)
 ```
 
 <h2 align="left">🖥️ 42</h2>
